@@ -5,7 +5,7 @@ const secondImg =
 
 const Community = () => {
   return (
-    <div className="flex justify-center mt-70 mb-50">
+    <div className="flex justify-center mt-70 mb-10">
       <div className="relative  mr-7 ml-7 bg-white rounded-lg text-center shadow-[0_0_20px_rgba(0,0,0,0.5)] sm:w-[600px] lg:w-[450px] xl:w-[600px]">
         <div className="flex gap-12 flex-col p-8 z-20">
           <div className="z-40 ">
