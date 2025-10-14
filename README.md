@@ -1,17 +1,32 @@
-# 🚀 React + Vite Projekt
+# XRP Landing Page 🚀
 
-Dieses Projekt wurde mit [Vite](https://vitejs.dev/) und [React](https://react.dev/) erstellt.  
-Es bietet eine schnelle Entwicklungsumgebung mit Hot Module Replacement (HMR) und optimiertem Build.
+Eine moderne Landing­page für **XRP** — erstellt mit **React** + **Vite**.
 
 ---
 
-## 📦 Installation
+## 📌 Überblick
 
-Zuerst das Repository klonen und in den Projektordner wechseln:
+Dies ist eine statische Landingpage, die mit React und Vite entwickelt wurde. Ziel ist ein schnelles, performantes Frontend mit einfacher Wartung und Deployment.
+
+---
+
+## 🛠️ Features & Technologien
+
+- React (funktionale Komponenten, Hooks)
+- Vite als Build-Tool mit schneller Entwicklung & optimiertem Produktions-Build
+- Modulbasierte Struktur (Components, Assets etc.)
+- Responsive Design
+- (Optional) Du kannst hier später Verlinkungen zu APIs, Payment Gateways, Formularen etc. hinzufügen
+
+---
+
+## 🚀 Nutzung / Entwicklung
+
+### 1. Repository klonen & Verzeichnis wechseln
 
 ```bash
-git clone https://github.com/<dein-benutzername>/<dein-repo-name>.git
-cd <dein-repo-name>
+git clone https://github.com/AlisinaY/xrp-landing-page.git
+cd xrp-landing-page
 
 
 
