@@ -19,7 +19,7 @@ XRP ist die Kryptowährung des Unternehmens Ripple Labs.
 Sie wurde entwickelt, um schnelle, kostengünstige und sichere internationale Geldtransfers zu ermöglichen.
 Im Gegensatz zu klassischen Kryptowährungen wie Bitcoin konzentriert sich XRP vor allem auf Zahlungsabwicklungen zwischen Banken und Finanzinstituten.
 
-Offizielle Seite: https://ripple.com/xrp/
+Offizielle Seite: https://xrpl.org/
 
 # 🚀 Nutzung / Entwicklung
 
@@ -67,4 +67,4 @@ Ali Sina Yozbashi
 Frontend Developer | React, JavaScript, Tailwind CSS, Node.js
 
 - 📍 Stuttgart, Deutschland
-- 🔗 LinkedIn
+- 🔗 LinkedIn https://www.linkedin.com/in/ali-sina-yozbashi-7a7a432ab/
