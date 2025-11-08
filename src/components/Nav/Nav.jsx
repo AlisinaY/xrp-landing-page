@@ -19,7 +19,7 @@ import SearchBox from "./SearchBox.jsx";
 
 import xrpLogo from "../../assets/xrp-log.png";
 
-const Nav = () => {
+export default function Nav() {
   const [about, setAbout] = useState(null);
   const [docs, setDocs] = useState(null);
   const [resources, setResources] = useState(null);
@@ -27,6 +27,7 @@ const Nav = () => {
   const [language, setLanguage] = useState(null);
   const [openModal, setOpenModal] = useState(null);
   const navRef = useRef(null);
+  const vh = useViewPortHeight();
 
   function handleSection(section) {
     setAbout(section === "about" ? !about : false);
@@ -145,11 +146,53 @@ const Nav = () => {
       {community && <Community />}
       {language && <Language />}
       {createPortal(
-        openModal && <SearchBox onClose={() => setOpenModal(false)} />,
+        openModal && (
+          <SearchBox onClose={() => setOpenModal(false)} browserHeight={vh} />
+        ),
         document.getElementById("modal-root")
       )}
     </>
   );
-};
+}
 
-export default Nav;
+function getVH() {
+  return Math.round(
+    window.visualViewport ? window.visualViewport.height : window.innerHeight
+  );
+}
+
+function useViewPortHeight() {
+  const [vh, setVh] = useState(typeof window !== "undefined" ? getVH() : 0);
+
+  useEffect(() => {
+    function handler() {
+      setVh(getVH());
+    }
+
+    const vv = window.visualViewport;
+    window.addEventListener("resize", handler);
+    vv?.addEventListener("resize", handler);
+    vv?.addEventListener("scroll", handler);
+
+    let media = window.matchMedia(
+      `(resolution: ${window.devicePixelRatio}dppx)`
+    );
+    const onDppx = () => {
+      handler();
+      media.removeEventListener("change", onDppx);
+      media = window.matchMedia(`(resolution: ${window.devicePixelRatio}dppx)`);
+      media.addEventListener("change", onDppx);
+    };
+    media.addEventListener("change", onDppx);
+
+    handler();
+
+    return () => {
+      window.removeEventListener("resize", handler);
+      vv?.removeEventListener("resize", handler);
+      vv?.removeEventListener("scroll", handler);
+    };
+  }, []);
+
+  return vh;
+}

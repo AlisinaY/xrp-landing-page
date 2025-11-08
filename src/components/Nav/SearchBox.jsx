@@ -1,12 +1,14 @@
-export default function SearchBox({ onClose }) {
-  console.log(onClose);
+export default function SearchBox({ onClose, browserHeight }) {
   return (
     <>
       <div
         onClick={onClose}
-        className="fixed bg-black inset-0 opacity-10"></div>
-      <div className="fixed inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-[80vw] h-[95vh] bg-white rounded-md shadow-[0_0_5px_rgba(0,0,0,0.5)] pointer-events-auto">
+        className="hidden lg:block fixed bg-black inset-0 opacity-10"></div>
+      <div className="hidden fixed inset-0 lg:flex items-center justify-center pointer-events-none">
+        <div
+          className={`lg:w-[95vw] lg:h-[580px] xl:w-[1100px] ${
+            browserHeight <= 650 ? "xl:h-[580px]" : "xl:h-[740px]"
+          } bg-white xl:bg-amber-200 rounded-md shadow-[0_0_5px_rgba(0,0,0,0.5)] pointer-events-auto`}>
           <div className="">
             <span>Icon</span> <span>Search docs...</span>
           </div>
