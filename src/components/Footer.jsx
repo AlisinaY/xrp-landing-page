@@ -65,10 +65,10 @@ const Footer = () => {
               <div className="">
                 <h1 className="font-bold text-lg">{item.title}</h1>
               </div>
-              <ul className="flex flex-col items-center gap-2 xs:gap-4 xs:items-start">
+              <ul className="flex flex-col items-center xs:gap-4 xs:items-start">
                 {item.items.map((item) => {
                   return (
-                    <li className="text-[0.9rem] xs:text-[0.8rem] lg:text-[1rem] ">
+                    <li className=" max-sm:w-25  text-[0.9rem] xs:text-[0.8rem] lg:text-[1rem] border-b border-transparent hover:border-b hover:border-pink-600 hover:text-pink-600">
                       {item}
                     </li>
                   );

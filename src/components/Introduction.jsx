@@ -45,20 +45,22 @@ const Introduction = () => {
         <div className="flex max-lg:flex-col gap-20 lg-flex-row  lg:flex-wrap lg:gap-10  xl:gap-25">
           {data.map((item) => {
             return (
-              <div className="flex flex-col justify-between rounded-lg bg-white shadow-[0_0_10px_rgba(0,0,0,0.5)] sm:w-[600px] lg:w-[270px] lg:h-[380px] xl:w-[350px]">
-                <div className="p-3 lg:ml-6 lg:mt-5">
-                  <h1 className="font-bold text-xl lg:text-2xl">
-                    {item.title}
-                  </h1>
-                </div>
-                <div className="p-3 lg:ml-6">
-                  <p className="text-lg">{item.description}</p>
-                </div>
-                <div className="mt-18 sm:mt-35 lg:mt-20">
-                  <img
-                    className="min-w-full h-10 object-cover"
-                    src={item.img}
-                  />
+              <div className="pt-4 duration-700 ease-in-out hover:pb-4 hover:pt-0 hover:duration-700 hover:ease-in-out">
+                <div className="flex flex-col justify-between rounded-lg bg-white shadow-[0_0_10px_rgba(0,0,0,0.5)] sm:w-[600px] lg:w-[270px] lg:h-[380px] xl:w-[350px]">
+                  <div className="p-3 lg:ml-6 lg:mt-5">
+                    <h1 className="font-bold text-xl lg:text-2xl">
+                      {item.title}
+                    </h1>
+                  </div>
+                  <div className="p-3 lg:ml-6">
+                    <p className="text-lg">{item.description}</p>
+                  </div>
+                  <div className="mt-18 sm:mt-35 lg:mt-20">
+                    <img
+                      className="min-w-full h-10 object-cover"
+                      src={item.img}
+                    />
+                  </div>
                 </div>
               </div>
             );

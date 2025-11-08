@@ -1,6 +1,10 @@
-import xrpHeaderImg from "../assets/xrp.png";
+import { useState } from "react";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
+  const [isHovered, setIsHovered] = useState(false);
   return (
     <div className="flex items-center flex-col mt-10 mr-8 ml-8">
       <div className="w-full sm:w-140 lg:w-215">
@@ -17,8 +21,28 @@ const Header = () => {
             Built for Business
           </h1>
         </div>
-        <div className="w-full mt-5 bg-blue-800 rounded-sm h-12 flex items-center justify-center text-white sm:w-40">
-          <button className="text-sm font-bold ">Start Building</button>
+        <div className=" flex justify-center items-center w-full  rounded-sm h-12 bg-blue-700  mt-5 duration-700 ease-out hover:bg-blue-800 hover:ease-in hover:duration-800 sm:w-42">
+          <div
+            onMouseOver={function () {
+              setIsHovered(true);
+            }}
+            onMouseLeave={function () {
+              setIsHovered(false);
+            }}
+            className="w-34   flex items-center  max-sm:justify-center   gap-4 text-white  sm:pr-3 sm:pl-3 sm:w-42  ">
+            <div className="w-[170px] text-left">
+              <button className="text-sm font-bold sm:ml-1">
+                Start Building
+              </button>
+            </div>
+            <div
+              className={`w-[30px]  transition-all duration-700
+             ${isHovered ? "mr-0" : "mr-1.5"}`}>
+              <FontAwesomeIcon
+                icon={faArrowRight}
+                className=""></FontAwesomeIcon>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -1,9 +1,13 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+body {
+  background-color: rgb(245, 241, 244);
+}
+
 @theme {
   --breakpoint-xs: 670px;
   --breakpoint-sm: 765px;
   --breakpoint-lg: 990px;
-  --breakpoint-xl: 1135px;
+  --breakpoint-xl: 1200px;
 }

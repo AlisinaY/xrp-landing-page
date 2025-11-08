@@ -35,3 +35,11 @@ npm install
 
 npm run dev
 ```
+
+npm create vite@latest my-project -- --template react
+
+cd my-project
+
+npm install tailwindcss @tailwindcss/vite
+
+npm run dev
