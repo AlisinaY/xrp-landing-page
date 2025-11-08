@@ -24,16 +24,20 @@ Offizielle Seite: https://ripple.com/xrp/
 
 # 🚀 Nutzung / Entwicklung
 
-1. Repository klonen & Verzeichnis wechseln
+### 1. Repository klonen & Verzeichnis wechseln
+
+```
    git clone https://github.com/AlisinaY/xrp-landing-page.git
    cd xrp-landing-page
+```
 
-2. Abhängigkeiten installieren
+### 2. Abhängigkeiten installieren
 
-# npm install
+npm install
 
-3. Entwicklungsserver starten
-   npm run dev
+### 3. Entwicklungsserver starten
+
+npm run dev
 
 Der Server läuft anschließend unter:
 👉 http://localhost:5173
