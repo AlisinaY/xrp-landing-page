@@ -1,15 +1,26 @@
-## 🚀 Nutzung / Entwicklung
+💎 XRP Landing Page (React + Tailwind CSS)
+🧠 Projektbeschreibung
 
-### 1. Repository klonen & Verzeichnis wechseln
+Dieses Projekt ist eine Nachbildung der offiziellen XRP-Homepage, entwickelt mit React, Tailwind CSS, HTML, CSS und JavaScript.
+Ziel des Projekts ist es, meine Kenntnisse in modernen Frontend-Technologien zu vertiefen, indem ich eine professionelle Landing Page mit einem realen Design-Beispiel nachbaue.
 
-```bash
-git clone https://github.com/AlisinaY/xrp-landing-page.git
-cd xrp-landing-page
+Ich nutze dieses Projekt, um praktische Erfahrung mit Themen wie:
 
+Komponentenstrukturierung in React
 
+State Management & Props
 
-npm install
+Responsive Design mit Tailwind CSS
 
+Wiederverwendbaren UI-Elementen
 
-npm run dev
-```
+Git-Versionierung
+zu sammeln und mein Frontend-Wissen zu festigen.
+
+🪙 Was ist XRP?
+
+XRP ist die Kryptowährung des Unternehmens Ripple Labs.
+Sie wurde entwickelt, um schnelle, kostengünstige und sichere internationale Geldtransfers zu ermöglichen.
+Im Gegensatz zu klassischen Kryptowährungen wie Bitcoin konzentriert sich XRP vor allem auf Zahlungsabwicklungen zwischen Banken und Finanzinstituten.
+
+Offizielle Seite: https://ripple.com/xrp/
