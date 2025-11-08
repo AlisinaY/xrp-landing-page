@@ -46,14 +46,15 @@ Der Server läuft anschließend unter:
 - 💛 JavaScript (ES6+) – Interaktive Logik
 - 🔧 Vite – Blitzschnelles Build-Tool
 - 🧭 Git – Versionskontrolle
-- 🎯 Lernziele
+
+# 🎯 Lernziele
 
 - Vertiefung von JavaScript- und React-Kenntnissen
 - Aufbau einer responsiven Landing Page mit Tailwind
 - Übung im strukturieren und modularen Aufbau von Komponenten
 - Praxis im Umgang mit Git & GitHub Workflows
 
-## ✨ Autor
+# ✨ Autor
 
 Ali Sina Yozbashi
 Frontend Developer | React, JavaScript, Tailwind CSS, Node.js
