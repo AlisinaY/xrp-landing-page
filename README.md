@@ -24,3 +24,49 @@ Sie wurde entwickelt, um schnelle, kostengünstige und sichere internationale Ge
 Im Gegensatz zu klassischen Kryptowährungen wie Bitcoin konzentriert sich XRP vor allem auf Zahlungsabwicklungen zwischen Banken und Finanzinstituten.
 
 Offizielle Seite: https://ripple.com/xrp/
+
+🚀 Nutzung / Entwicklung
+
+1. Repository klonen & Verzeichnis wechseln
+   git clone https://github.com/AlisinaY/xrp-landing-page.git
+   cd xrp-landing-page
+
+2. Abhängigkeiten installieren
+   npm install
+
+3. Entwicklungsserver starten
+   npm run dev
+
+Der Server läuft anschließend unter:
+👉 http://localhost:5173
+
+🧩 Verwendete Technologien
+
+⚛️ React – Komponentenbasiertes UI-Framework
+
+🎨 Tailwind CSS – Utility-first CSS Framework für schnelle Entwicklung
+
+🧱 HTML5 & CSS3 – Grundstruktur & Styling
+
+💛 JavaScript (ES6+) – Interaktive Logik
+
+🔧 Vite – Blitzschnelles Build-Tool
+
+🧭 Git – Versionskontrolle
+
+🎯 Lernziele
+
+Vertiefung von JavaScript- und React-Kenntnissen
+
+Aufbau einer responsiven Landing Page mit Tailwind
+
+Übung im strukturieren und modularen Aufbau von Komponenten
+
+Praxis im Umgang mit Git & GitHub Workflows
+
+✨ Autor
+
+Ali Sina Yozbashi
+Frontend Developer | React, JavaScript, Tailwind CSS, Node.js
+📍 Stuttgart, Deutschland
+🔗 LinkedIn
