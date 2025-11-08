@@ -33,11 +33,15 @@ Offizielle Seite: https://ripple.com/xrp/
 
 ### 2. Abhängigkeiten installieren
 
+```
 npm install
+```
 
 ### 3. Entwicklungsserver starten
 
+```
 npm run dev
+```
 
 Der Server läuft anschließend unter:
 👉 http://localhost:5173
