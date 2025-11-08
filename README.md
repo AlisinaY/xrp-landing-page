@@ -7,12 +7,11 @@ Ziel des Projekts ist es, meine Kenntnisse in modernen Frontend-Technologien zu 
 
 Ich nutze dieses Projekt, um praktische Erfahrung mit Themen wie:
 
-- . Komponentenstrukturierung in React
-- . State Management & Props
-- . Responsive Design mit Tailwind CSS
-- . Wiederverwendbaren UI-Elementen
-- . Git-Versionierung
-- zu sammeln und mein Frontend-Wissen zu festigen.
+- Komponentenstrukturierung in React
+- State Management & Props
+- Responsive Design mit Tailwind CSS
+- Wiederverwendbaren UI-Elementen
+- Git-Versionierung zu sammeln und mein Frontend-Wissen zu festigen.
 
 # 🪙 Was ist XRP?
 
