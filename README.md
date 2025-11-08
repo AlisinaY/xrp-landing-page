@@ -32,7 +32,8 @@ Offizielle Seite: https://ripple.com/xrp/
    cd xrp-landing-page
 
 2. Abhängigkeiten installieren
-   npm install
+
+# npm install
 
 3. Entwicklungsserver starten
    npm run dev
