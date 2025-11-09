@@ -26,7 +26,14 @@ export default function Nav() {
   const [community, setCommunity] = useState(null);
   const [language, setLanguage] = useState(null);
   const [openModal, setOpenModal] = useState(null);
+  const [openNav, setOpenNav] = useState(null);
   const navRef = useRef(null);
+  const browserHeight = useViewPortHeight();
+
+  const browserWidth = useViewPortWidth();
+  console.log(browserWidth);
+
+  const arrow = ">";
 
   function handleSection(section) {
     setAbout(section === "about" ? !about : false);
@@ -64,14 +71,23 @@ export default function Nav() {
   return (
     <>
       <div ref={navRef}></div>
-      <div className="flex justify-between items-center h-20 ">
+      <div className="flex justify-between items-center h-20 fixed top-0 w-[100%] bg-violet-50">
         <div className="ml-8  grow-1 xl:mr-3 ">
           <NavLink to="/">
             <img src={xrpLogo} className="w-40" />
           </NavLink>
         </div>
-        <div className="text-2xl mr-5 lg:hidden">
-          <FontAwesomeIcon icon={faBars}> </FontAwesomeIcon>
+        <div
+          onClick={() => setOpenNav(!openNav)}
+          className="text-2xl mr-8 lg:hidden">
+          {openNav ? (
+            <div className="rotate-28 mr-5 mb-3">
+              <div className="bg-black h-[3px] w-5 rotate-15 absolute"></div>
+              <div className="bg-black h-[3px] w-5 rotate-105 absolute"></div>
+            </div>
+          ) : (
+            <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>
+          )}
         </div>
         <div className="max-lg:hidden grow-5 mr-5">
           <ul className="flex flex-row justify-between mr-10 ">
@@ -139,15 +155,150 @@ export default function Nav() {
           </div>
         </div>
       </div>
-      {about && <About />}
+      {openNav && (
+        <div className="lg:hidden w-[100%] h-[250px]  shadow-[0_4px_6px_-1px_rgba(0,0,0.5)] fixed top-20 transition duration-300 ease-out">
+          <div className="bg-gray-300 w-[100%] h-[40px]">
+            <div className=""></div>
+            <div className=""></div>
+            <div className=""></div>
+          </div>
+          <div className="bg-gray-200 h-[210px] pt-5 pb-5 pl-10 pr-10">
+            <ul className="flex flex-col gap-5">
+              <div
+                onClick={() => handleSection("about")}
+                className="flex flex-row justify-between">
+                <li className="font-semibold text-[1rem]">About</li>
+                <span className="text-violet-600 font-bold text-xl">
+                  {arrow}
+                </span>
+              </div>
+              <div
+                onClick={() => handleSection("docs")}
+                className="flex flex-row justify-between">
+                <li className="font-semibold text-[1rem]">Docs</li>
+                <span className="text-violet-600 font-bold text-xl">
+                  {arrow}
+                </span>
+              </div>
+              <div
+                onClick={() => handleSection("resources")}
+                className="flex flex-row justify-between">
+                <li className="font-semibold text-[1rem]">Resources</li>
+                <span className="text-violet-600 font-bold text-xl">
+                  {arrow}
+                </span>
+              </div>
+              <div
+                onClick={() => handleSection("community")}
+                className="flex flex-row justify-between">
+                <li className="font-semibold text-[1rem]">Community</li>
+                <span className="text-violet-600 font-bold text-xl">
+                  {arrow}
+                </span>
+              </div>
+            </ul>
+          </div>
+        </div>
+      )}
+      {about && (
+        <About browserHeight={browserHeight} browserWidth={browserWidth} />
+      )}
       {docs && <Docs />}
       {resources && <Resources />}
       {community && <Community />}
       {language && <Language />}
       {createPortal(
-        openModal && <SearchBox onClose={() => setOpenModal(false)} />,
+        openModal && (
+          <SearchBox
+            onClose={() => setOpenModal(false)}
+            browserHeight={browserHeight}
+          />
+        ),
         document.getElementById("modal-root")
       )}
     </>
   );
+}
+
+function getVH() {
+  return Math.round(
+    window.visualViewport ? window.visualViewport.height : window.innerHeight
+  );
+}
+
+function getVW() {
+  return Math.round(
+    window.visualViewport ? window.visualViewport.width : window.innerWidth
+  );
+}
+function useViewPortWidth() {
+  const [vw, setVw] = useState(typeof window !== "undefined" ? getVW() : 0);
+  useEffect(() => {
+    function handler() {
+      setVw(getVW());
+    }
+
+    const vv = window.visualViewport;
+
+    window.visualViewport.addEventListener("resize", handler);
+    vv?.addEventListener("resize", handler);
+    vv?.addEventListener("scroll", handler);
+
+    let media = window.matchMedia(
+      `(resolution: ${window.devicePixelRatio}dppx)`
+    );
+    const onDppx = () => {
+      handler();
+      media.removeEventListener("change", onDppx);
+      media = window.matchMedia(`(resolution: ${window.devicePixelRatio}dppx)`);
+      media.addEventListener("change", onDppx);
+    };
+    media.addEventListener("change", onDppx);
+
+    handler();
+
+    return () => {
+      window.visualViewport.removeEventListener("resize", handler);
+      vv?.removeEventListener("resize", handler);
+      vv?.removeEventListener("scroll", handler);
+    };
+  }, []);
+
+  return vw;
+}
+
+function useViewPortHeight() {
+  const [vh, setVh] = useState(typeof window !== "undefined" ? getVH() : 0);
+
+  useEffect(() => {
+    function handler() {
+      setVh(getVH());
+    }
+
+    const vv = window.visualViewport;
+    window.addEventListener("resize", handler);
+    vv?.addEventListener("resize", handler);
+    vv?.addEventListener("scroll", handler);
+
+    let media = window.matchMedia(
+      `(resolution: ${window.devicePixelRatio}dppx)`
+    );
+    const onDppx = () => {
+      handler();
+      media.removeEventListener("change", onDppx);
+      media = window.matchMedia(`(resolution: ${window.devicePixelRatio}dppx)`);
+      media.addEventListener("change", onDppx);
+    };
+    media.addEventListener("change", onDppx);
+
+    handler();
+
+    return () => {
+      window.removeEventListener("resize", handler);
+      vv?.removeEventListener("resize", handler);
+      vv?.removeEventListener("scroll", handler);
+    };
+  }, []);
+
+  return vh;
 }

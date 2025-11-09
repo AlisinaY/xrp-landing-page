@@ -1,7 +1,4 @@
-import { useState, useEffect } from "react";
-
-export default function SearchBox({ onClose }) {
-  const browserHeight = useViewPortHeight();
+export default function SearchBox({ onClose, browserHeight }) {
   return (
     <>
       <div
@@ -38,48 +35,4 @@ export default function SearchBox({ onClose }) {
       </div>
     </>
   );
-}
-
-function getVH() {
-  return Math.round(
-    window.visualViewport ? window.visualViewport.height : window.innerHeight
-  );
-}
-
-function useViewPortHeight() {
-  const [vh, setVh] = useState(typeof window !== "undefined" ? getVH() : 0);
-
-  useEffect(() => {
-    function handler() {
-      setVh(getVH());
-    }
-
-    const vv = window.visualViewport;
-    window.addEventListener("resize", handler);
-    vv?.addEventListener("resize", handler);
-    vv?.addEventListener("scroll", handler);
-
-    let media = window.matchMedia(
-      `(resolution: ${window.devicePixelRatio}dppx)`
-    );
-    const onDppx = () => {
-      handler();
-      media.removeEventListener("change", onDppx);
-      media = window.matchMedia(`(resolution: ${window.devicePixelRatio}dppx)`);
-      media.addEventListener("change", onDppx);
-    };
-    media.addEventListener("change", onDppx);
-
-    handler();
-
-    return () => {
-      window.removeEventListener("resize", handler);
-      vv?.removeEventListener("resize", handler);
-      vv?.removeEventListener("scroll", handler);
-    };
-  }, []);
-
-  console.log(vh);
-
-  return vh;
 }

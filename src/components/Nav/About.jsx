@@ -1,8 +1,13 @@
 import { NavLink } from "react-router-dom";
 
-export default function About() {
-  return (
-    <div className="fixed flex gap-15 left-50 shadow-[0_0_10px_rgba(0,0,0,0.5)] bg-violet-50 pt-8 pl-12 pb-8 pr-20">
+export default function About({ browserHeight, browserWidth }) {
+  const lgScreenStyle =
+    "fixed flex gap-15 left-50 top-20 shadow-[0_0_10px_rgba(0,0,0,0.5)] bg-violet-50 pt-8 pl-12 pb-8 pr-20 max-lg:hidden";
+  const smScreenStyle =
+    "fixed flex flex-col gap-4 bg-violet-50 w-[100%] h-[100%] top-20 lg:hidden";
+
+  const aboutJsx = (
+    <>
       <div className="flex gap-4 flex-col w-40">
         <span className="font-thin">XRP Ledger</span>
         <h4 className="hover:text-violet-600">
@@ -37,6 +42,28 @@ export default function About() {
           <NavLink>Privacy Policy</NavLink>
         </h4>
       </div>
-    </div>
+    </>
+  );
+
+  return (
+    <>
+      <div className={`${browserWidth <= 995 ? smScreenStyle : lgScreenStyle}`}>
+        <div className="bg-gray-200 pl-15 pt-2 text-lg font-semibold h-13 fixed inset-0 top-20 lg:hidden">
+          About
+        </div>
+        {innerWidth <= 995 ? (
+          <div
+            className="pl-15 pb-5 pt-16 bg-violet-50"
+            style={{
+              height: browserHeight - 132,
+              overflow: "scroll"
+            }}>
+            {aboutJsx}
+          </div>
+        ) : (
+          aboutJsx
+        )}
+      </div>
+    </>
   );
 }
