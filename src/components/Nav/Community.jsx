@@ -1,14 +1,20 @@
 import { NavLink } from "react-router-dom";
 
-export default function Community() {
-  return (
-    <div className="fixed left-98  bg-violet-50 shadow-[0_0_10px_rgba(0,0,0,0.5)] pl-10 pr-10 pt-8 pb-8 flex flex-col gap-8">
-      <NavLink className="flex gap-2 items-center">
-        <div className="bg-white p-3 rounded-sm">
-          <img src="https://xrpl.org/img/icons/lightmode/contribute.svg" />
+export default function Community({ browserWidth, browserHeight }) {
+  const smScreenStyle = "bg-violet-50 flex flex-col fixed inset-0 top-20";
+  const lgScreenStlye =
+    "fixed left-98 top-20 bg-violet-50 shadow-[0_0_10px_rgba(0,0,0,0.5)] pl-10 pr-10 pt-8 pb-8 flex flex-col gap-8";
+  const html = (
+    <>
+      <NavLink className="flex gap-6 items-center lg:items-center lg:justify-center">
+        <div className="bg-white p-4 rounded-sm  flex items-center justify-center">
+          <img
+            className=""
+            src="https://xrpl.org/img/icons/lightmode/contribute.svg"
+          />
         </div>
-        <div className="flex justify-items-start items-center flex-col gap-2 w-60">
-          <h1 className="text-2xl font-semibol text-center hover:text-violet-700">
+        <div className="flex flex-col gap-2 lg:w-60">
+          <h1 className="text-xl sm:text-2xl font-bold hover:text-violet-700">
             Contribute to the XRPL Community
           </h1>
           <span className="font-thin">Join the conversation</span>
@@ -41,6 +47,22 @@ export default function Community() {
           <NavLink to="">Report a Scam</NavLink>
         </h1>
       </div>
+    </>
+  );
+  return (
+    <div className={`${browserWidth <= 995 ? smScreenStyle : lgScreenStlye}`}>
+      <div className="bg-gray-200 font-semibold text-lg pl-10 pb-3 pt-3">
+        Community
+      </div>
+      {browserWidth <= 995 ? (
+        <div
+          style={{ height: browserHeight - 132, overflow: "scroll" }}
+          className="pl-10 pr-10 pb-12 pt-6">
+          {html}
+        </div>
+      ) : (
+        html
+      )}
     </div>
   );
 }

@@ -71,7 +71,9 @@ export default function Nav() {
   return (
     <>
       <div ref={navRef}></div>
-      <div className="flex justify-between items-center h-20 fixed top-0 w-[100%] bg-violet-50">
+      <div
+        style={{ backgroundColor: "rgb(245, 241, 244)" }}
+        className="flex justify-between items-center h-20 fixed top-0 w-[100%]  z-50">
         <div className="ml-8  grow-1 xl:mr-3 ">
           <NavLink to="/">
             <img src={xrpLogo} className="w-40" />
@@ -203,9 +205,15 @@ export default function Nav() {
       {about && (
         <About browserHeight={browserHeight} browserWidth={browserWidth} />
       )}
-      {docs && <Docs />}
-      {resources && <Resources />}
-      {community && <Community />}
+      {docs && (
+        <Docs browserHeight={browserHeight} browserWidth={browserWidth} />
+      )}
+      {resources && (
+        <Resources browserHeight={browserHeight} browserWidth={browserWidth} />
+      )}
+      {community && (
+        <Community browserHeight={browserHeight} browserWidth={browserWidth} />
+      )}
       {language && <Language />}
       {createPortal(
         openModal && (

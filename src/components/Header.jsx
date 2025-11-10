@@ -6,7 +6,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 const Header = () => {
   const [isHovered, setIsHovered] = useState(false);
   return (
-    <div className="flex items-center flex-col mt-10 mr-8 ml-8">
+    <div className="flex items-center flex-col mt-20 mr-8 ml-8 pt-20">
       <div className="w-full sm:w-140 lg:w-215">
         <img src="https://xrpl.org/img/lightmode/home-hero.svg" />
       </div>
